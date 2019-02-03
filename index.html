@@ -20,7 +20,7 @@
             <!--<a-plane id="objeto" position="0 0 -.1" width=".09" height=".09" opacity=".5"
             ></a-plane>-->
             
-            <a-marker markerhandler emitevents="true" cursor="fuse: false; rayOrigin: mouse" id="animated-marker" type='barcode' value='6'>
+            <a-marker markerhandler emitevents="true" cursor="fuse: false; rayOrigin: mouse" type='barcode' value='6'>
                 <a-entity id="escenaId" position="0 0 0">
                     <!--escenario-->
                     <a-box position="0 0 -.5" scale="2 .05 .05"
@@ -32,15 +32,15 @@
                     <a-box position="-1 0 0" scale=".05 .05 1"
                     material="color: #5F4C0B;"></a-box>
                     <!--snake-->
-                    <a-box position="0 0 0" scale=".05 .05 .05"
+                    <a-box id="1" position="0 0 0" scale=".05 .05 .05"
                     material="color: #01DF01;"></a-box>
-                    <a-box position=".05 0 0" scale=".05 .05 .05"
+                    <a-box id="2" position=".05 0 0" scale=".05 .05 .05"
                     material="color: #04B404;"></a-box>
-                    <a-box position=".1 0 0" scale=".05 .05 .05"
+                    <a-box id="3" position=".1 0 0" scale=".05 .05 .05"
                     material="color: #01DF01;"></a-box>
-                    <a-box position=".15 0 0" scale=".05 .05 .05"
+                    <a-box id="4" position=".15 0 0" scale=".05 .05 .05"
                     material="color: #04B404;"></a-box>
-                    <a-box position=".2 0 0" scale=".05 .05 .05"
+                    <a-box id="5" position=".2 0 0" scale=".05 .05 .05"
                     material="color: #01DF01;"></a-box>
                 </a-entity>
             </a-marker>
@@ -66,6 +66,8 @@
     </body>
 
     <script>
+
+        //deteccion de direccion de deslizamiento---------------------------------------------------------------
         var xIni;
         var yIni;
         var canvas = document.getElementById('bodyId');
@@ -77,30 +79,36 @@
                 yIni = touch.pageY;
             }
         }, false);
-        /**/
             canvas.addEventListener('touchmove', function(e){
             if (e.targetTouches.length == 1) 
             { 
                 var touch = e.targetTouches[0]; 
                 if((touch.pageX>xIni+40))
                 {
-                    alert("el swipe se genera hacia la derecha");
+                    console.log("derecha");
                 }
                 else if((touch.pageX<xIni-40))
                 {
-                    alert("el swipe se genera hacia la izquierda");
+                    console.log("izquierda");
                 }
                 else if((touch.pageY>yIni+40))
                 {
-                    alert("el swipe se genera hacia abajo");
+                    console.log("abajo");
                 }
                 else if((touch.pageY<yIni-40))
                 {
-                    alert("el swipe se genera hacia arriba");
+                    console.log("arriba");
                 }
             }
             //alert("inix:" + xIni +" touchP:" + touch.pageX);
         }, false);
+        //END deteccion de direccion de deslizamiento---------------------------------------------------------------
+        var posx=0
+        window.setTimeout(function(e)
+        {
+            pos++;
+            document.getElementById(toString(pos)).setAttribute("material",{color: "blue"});
 
+        },1000);
     </script>
 </html>
