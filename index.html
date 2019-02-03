@@ -101,12 +101,12 @@
             }
             //alert("inix:" + xIni +" touchP:" + touch.pageX);
         }, false);
-        //END deteccion de direccion de deslizamiento---------------------------------------------------------------
-        var pos=0
+        //movimiento---------------------------------------------------------------
+        var arrayPos =(1,2,3,4,5,6)(1,2,3,4,5,6)(1,2,3,4,5,6);
         window.setInterval(function(e)
         {
-            pos++;
-            document.getElementById(pos.toString()).setAttribute("material",{color:"blue"});
+            //document.getElementById(i.toString()).setAttribute("material",{color:"blue"});
+            console.log(arrayPos[0][1][2]);
 
         },2000);
     </script>
