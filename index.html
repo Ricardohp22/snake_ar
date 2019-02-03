@@ -82,9 +82,21 @@
             if (e.targetTouches.length == 1) 
             { 
                 var touch = e.targetTouches[0]; 
-                if((touch.pageX>xIni+10))
+                if((touch.pageX>xIni+20))
+                {
+                    alert("el swipe se genera hacia la derecha");
+                }
+                else if((touch.pageX<xIni-20))
                 {
                     alert("el swipe se genera hacia la izquierda");
+                }
+                else if((touch.pageY>yIni+20))
+                {
+                    alert("el swipe se genera hacia arriba");
+                }
+                else if((touch.pageY<yIni-20))
+                {
+                    alert("el swipe se genera hacia abajo");
                 }
             }
             //alert("inix:" + xIni +" touchP:" + touch.pageX);
