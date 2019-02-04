@@ -203,6 +203,7 @@
                     var validacion=0;
                     while(validacion==0)
                     {
+                        validacion=1;
                         posComX = aleat(.9,-.9);
                         posComZ = aleat(.4,-.4);
                         for(var i=0; i<elementos; i++)
@@ -212,10 +213,10 @@
                             console.log("poscomx:"+posComX+"  valx:"+validarx+"  poscomz:"+posComZ+" valz:"+validarz);  
                             if(((validarz <= posComZ+.04)&&(validarz >= posComZ-.04)) && ((validarx <= posComX+.04)&&(validarx >= posComX-.04)))
                             {
-                                //validacion=0;
+                                validacion=0;
                                 console.log("repetido");
                             }else{
-                                validacion=1;
+                                //validacion=1;
                             }
                         }
                         
