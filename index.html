@@ -207,6 +207,7 @@
                 var eslabon = document.createElement("a-box");
                 document.getElementById("escenaId").appendChild(eslabon);
                 eslabon.setAttribute("scale",{x:.05, y:.05, z:.05});
+                eslabon.setAttribute("position",{x:10, y:10, z:10});
                 if((elementos-1)%2)
                 {
                     eslabon.setAttribute("material",{color:"#01DF01"});
@@ -216,12 +217,12 @@
                 window.setTimeout(function(e)
                 {
                     eslabon.setAttribute("position",{x:posUltX, y:0, z:posUltZ});
-                },500);
+                },200);
                 eslabon.setAttribute("id",(elementos-1).toString());
 
             }
 
-        },500);
+        },200);
         
         window.setTimeout(function(e)
         {
