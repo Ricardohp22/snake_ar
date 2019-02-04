@@ -26,9 +26,9 @@
                     material="color: #5F4C0B;"></a-box>
                     <a-box position="0 0 .5" scale="2 .05 .05"
                     material="color: #5F4C0B;"></a-box>
-                    <a-box position="1 0 0" scale=".05 .05 1.1"
+                    <a-box position="1 0 0" scale=".05 .05 1.05"
                     material="color: #5F4C0B;"></a-box>
-                    <a-box position="-1 0 0" scale=".05 .05 1.1"
+                    <a-box position="-1 0 0" scale=".05 .05 1.05"
                     material="color: #5F4C0B;"></a-box>
                     <!--snake-->
                     <a-box id="0" position="0 0 0" scale=".05 .05 .05"
@@ -159,14 +159,20 @@
                 alert("Perdiste");
             }
 
-            console.log(aleat(2,-2));
+            if((document.getElementById("0").getAttribute("position").z == posComZ) && (document.getElementById("0").getAttribute("position").x == posComX))
+            {
+                alert("Comida atrapada!");
+            }
 
         },500);
         var escenaComida = document.getElementById("escenaComidaId");
         var comida1 = document.getElementById("comida1Id"); 
+        var poscomida=0;
         window.setTimeout(function(e)
         {
-            comida1.setAttribute("position",{x:aleat(1,-1), y:0, z:aleat(.5,-.5)});
+            var posComX = aleat(1,-1);
+            var posComZ = aleat(.5,-.5);
+            comida1.setAttribute("position",{x: posComX, y:0, z: posComZ});
         });
 //funcion para generar un numero aleatorio
     function aleat(max, min) 
