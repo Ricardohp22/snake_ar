@@ -72,7 +72,7 @@
 
     <script>
         var escenaComida = document.getElementById("escenaComidaId");
-        var comida1 = document.getElementById("comida1Id"); 
+        //var comida1 = document.getElementById("comida1Id"); 
         var poscomida=0;
         var posComX=0;
         var posComZ=0;
@@ -176,7 +176,7 @@
                 var comida2 = document.createElement("a-box");
                 escenaComida.appendChild(comida2);
 
-                escenaComida.removeChild(comida1);
+                escenaComida.removeChild(document.getElementById("comida1Id"));
                 comida2.setAttribute("position",{x: posComX, y:0, z: posComZ});
                 comida2.setAttribute("scale",{x:.05, y:.05, z:.05});
                 comida2.setAttribute("material",{color:"#01DF01"});
@@ -190,7 +190,7 @@
         {
             posComX = aleat(1,-1);
             posComZ = aleat(.5,-.5);
-            comida1.setAttribute("position",{x: posComX, y:0, z: posComZ});
+            document.getElementById("comida1Id").setAttribute("position",{x: posComX, y:0, z: posComZ});
         },200);
 //funcion para generar un numero aleatorio
     function aleat(max, min) 
