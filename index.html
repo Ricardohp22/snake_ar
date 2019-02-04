@@ -140,16 +140,16 @@
                 }break;
             }
             //Colision--------------
-            if(document.getElementById("0").getAttribute("position").z == .5)
+            if(document.getElementById("0").getAttribute("position").z >= .5)
             {
                 alert("Perdiste");
-            }else if(document.getElementById("0").getAttribute("position").z == -.5)
+            }else if(document.getElementById("0").getAttribute("position").z <= -.5)
             {
                 alert("Perdiste");
-            }else if(document.getElementById("0").getAttribute("position").x == 1)
+            }else if(document.getElementById("0").getAttribute("position").x >= 1)
             {
                 alert("Perdiste");
-            }else if(document.getElementById("0").getAttribute("position").x == -1)
+            }else if(document.getElementById("0").getAttribute("position").x <= -1)
             {
                 alert("Perdiste");
             }
