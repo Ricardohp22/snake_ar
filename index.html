@@ -158,19 +158,19 @@
             var perdiste=0;
             if(posColZ >= .5)
             {
-                alert("Perdiste");
+                //alert("Perdiste");
                 perdiste=1;
             }else if(posColZ <= -.5)
             {
-                alert("Perdiste");
+                //alert("Perdiste");
                 perdiste=1;
             }else if(posColX >= 1)
             {
-                alert("Perdiste");
+                //alert("Perdiste");
                 perdiste=1;
             }else if(posColX <= -1)
             {
-                alert("Perdiste");
+                //alert("Perdiste");
                 perdiste=1;
             }
             if(perdiste==1)
@@ -178,7 +178,7 @@
                 
                 for(var i=0; i<elementos; i++)
                 {
-                    document.getElementById("escenaId").removeChild(elementos.toString());
+                    document.getElementById("escenaId").parentNode.removeChild(elementos.toString());
                     alert("funciona");
                 }
                 clearInterval(timer1);
