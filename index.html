@@ -169,13 +169,13 @@
             console.log("x:"+document.getElementById("0").getAttribute("position").x+"z:"+document.getElementById("0").getAttribute("position").z);
             if(((document.getElementById("0").getAttribute("position").z <= posComZ+.02)&&(document.getElementById("0").getAttribute("position").z >= posComZ-.02)) && ((document.getElementById("0").getAttribute("position").x <= posComX+.02)&&(document.getElementById("0").getAttribute("position").x >= posComX-.02)))
             {
-                elementos++;
+                //elementos++;
                 posComX = aleat(1,-1);
                 posComZ = aleat(.5,-.5);
 
-                //var comida2 = document.createElement("a-box");
-                //escenaComida.appendChild(comida2);
-                //comida2.setAttribute("position",{x: posComX, y:0, z: posComZ});
+                var comida2 = document.createElement("a-box");
+                escenaComida.appendChild(comida2);
+                comida2.setAttribute("position",{x: posComX, y:0, z: posComZ});
                 console.log("Comida atrapada!");
             }
 
