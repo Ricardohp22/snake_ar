@@ -155,7 +155,7 @@
             var posColZ=document.getElementById("0").getAttribute("position").z;
 
             //-------------Colision--------------
-            var perdiste=0
+            var perdiste=0;
             if(posColZ >= .5)
             {
                 alert("Perdiste");
@@ -175,11 +175,12 @@
             }
             if(perdiste==1)
             {
-                clearInterval(timer1);
+                
                 for(var i=0; i<elementos; i++)
                 {
                     document.getElementById("escenaId").removeChild(elementos.toString());
                 }
+                clearInterval(timer1);
             }
 
             console.log("x:"+ posComX +"z"+posComZ);//posicion de la comida
