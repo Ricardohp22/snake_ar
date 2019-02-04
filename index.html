@@ -83,12 +83,12 @@
             if (e.targetTouches.length == 1) 
             { 
                 var touch = e.targetTouches[0]; 
-                if((touch.pageX>xIni+40))
+                if((touch.pageX>xIni+40) && ((direc==3)||(direc==4)))
                 {
                     console.log("derecha");
                     direc=1;
                 }
-                else if((touch.pageX<xIni-40))
+                else if((touch.pageX<xIni-40) && ((direc==3)||(direc==4)))
                 {
                     console.log("izquierda");
                     direc=2;
@@ -139,7 +139,7 @@
                     document.getElementById("0").setAttribute("position",{x:posxh, y:0, z: (poszh-.05)});
                 }break;
             }
-            //Colision--------------
+            //-------------Colision--------------
             if(document.getElementById("0").getAttribute("position").z >= .5)
             {
                 alert("Perdiste");
