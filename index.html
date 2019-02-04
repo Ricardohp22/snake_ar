@@ -106,13 +106,13 @@
                     direc=2;
                     start=1;
                 }
-                else if((touch.pageY>yIni+30)&& ((direc==2)||(direc==1)))
+                else if((touch.pageY>yIni+30) && ((direc==2)||(direc==1)))
                 {
                     console.log("abajo");
                     direc=3;
                     start=1;
                 }
-                else if((touch.pageY<yIni-30)&& ((direc==2)||(direc==1)))
+                else if((touch.pageY<yIni-30) && ((direc==2)||(direc==1)))
                 {
                     console.log("arriba");
                     direc=4;
@@ -187,7 +187,7 @@
                     {
                         perdiste=0;
                         document.getElementById("escenaId").removeChild(document.getElementById(i.toString()));
-                        alert("funciona");
+                        //alert("funciona");
                     }
                     clearInterval(timer1);
                 }
