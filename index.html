@@ -161,7 +161,7 @@
 
             console.log("x:"+ posComX +"z"+posComZ);
             console.log("x:"+document.getElementById("0").getAttribute("position").x+"z:"+document.getElementById("0").getAttribute("position").z);
-            if((document.getElementById("0").getAttribute("position").z == posComZ) && (document.getElementById("0").getAttribute("position").x == posComX))
+            if(((document.getElementById("0").getAttribute("position").z >= posComZ+.02)||(document.getElementById("0").getAttribute("position").z <= posComZ-.02)) && ((document.getElementById("0").getAttribute("position").x >= posComX+.02)||(document.getElementById("0").getAttribute("position").x <= posComX-.02)))
             {
                 alert("Comida atrapada!");
             }
