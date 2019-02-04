@@ -168,10 +168,12 @@
         var escenaComida = document.getElementById("escenaComidaId");
         var comida1 = document.getElementById("comida1Id"); 
         var poscomida=0;
+        var posComX=0;
+        var posComZ=0;
         window.setTimeout(function(e)
         {
-            var posComX = aleat(1,-1);
-            var posComZ = aleat(.5,-.5);
+            posComX = aleat(1,-1);
+            posComZ = aleat(.5,-.5);
             comida1.setAttribute("position",{x: posComX, y:0, z: posComZ});
         });
 //funcion para generar un numero aleatorio
