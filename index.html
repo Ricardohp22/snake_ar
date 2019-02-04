@@ -93,12 +93,12 @@
                     console.log("izquierda");
                     direc=2;
                 }
-                else if((touch.pageY>yIni+40))
+                else if((touch.pageY>yIni+40)&& ((direc==2)||(direc==1)))
                 {
                     console.log("abajo");
                     direc=3;
                 }
-                else if((touch.pageY<yIni-40))
+                else if((touch.pageY<yIni-40)&& ((direc==2)||(direc==1)))
                 {
                     console.log("arriba");
                     direc=4;
