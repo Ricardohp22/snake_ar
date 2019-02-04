@@ -26,9 +26,9 @@
                     material="color: #5F4C0B;"></a-box>
                     <a-box position="0 0 .5" scale="2 .05 .05"
                     material="color: #5F4C0B;"></a-box>
-                    <a-box position="1 0 0" scale=".05 .05 1"
+                    <a-box position="1 0 0" scale=".05 .05 1.1"
                     material="color: #5F4C0B;"></a-box>
-                    <a-box position="-1 0 0" scale=".05 .05 1"
+                    <a-box position="-1 0 0" scale=".05 .05 1.1"
                     material="color: #5F4C0B;"></a-box>
                     <!--snake-->
                     <a-box id="0" position="0 0 0" scale=".05 .05 .05"
@@ -154,6 +154,13 @@
                 alert("Perdiste");
             }
 
+            console.log(aleat(2,-2));
+
         },500);
+//funcion para generar un numero aleatorio
+    function aleat(max, min) 
+    {
+        return Math.round(Math.random() * (max*10 - min) + min)/10;
+    }
     </script>
 </html>
