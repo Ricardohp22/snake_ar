@@ -192,8 +192,7 @@
                 //var posnuevox = document.getElementById((elementos-1).toString()).getAttribute("position").x;
                 //var posnuevoz = document.getElementById((elementos-1).toString()).getAttribute("position").z;
                 elementos++;
-                
-                var eslabon = document.createElement("a-box");
+                /*var eslabon = document.createElement("a-box");
                 document.getElementById("escenaId").appendChild(eslabon);
                 eslabon.setAttribute("scale",{x:.05, y:.05, z:.05});
                 eslabon.setAttribute("position",{x:posColX, y:0, z:posColZ});
@@ -201,7 +200,24 @@
                 window.setTimeout(function(e)
                 {
                     eslabon.setAttribute("position",{x:colx, y:0, z:colz});
-                },(elementos-1)*500);
+                },(elementos-1)*500);*/
+                var posUltX=document.getElementById((elementos-2).toString()).getAttribute("position").x;
+                var posUltZ=document.getElementById((elementos-2).toString()).getAttribute("position").z;
+
+                var eslabon = document.createElement("a-box");
+                document.getElementById("escenaId").appendChild(eslabon);
+                eslabon.setAttribute("scale",{x:.05, y:.05, z:.05});
+                if((elementos-1)%2)
+                {
+                    eslabon.setAttribute("material",{color:"#01DF01"});
+                }else{
+                    eslabon.setAttribute("material",{color:"#04B404"});
+                }
+                window.setTimeout(function(e)
+                {
+                    eslabon.setAttribute("position",{x:posUltX, y:0, z:posUltZ});
+                },500);
+                eslabon.setAttribute("id",(elementos-1).toString());
 
             }
 
