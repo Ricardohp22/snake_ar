@@ -192,8 +192,8 @@
                     clearInterval(timer1);
                 }
 
-                console.log("x:"+ posComX +"z"+posComZ);//posicion de la comida
-                console.log("x:"+posColX+"z:"+posColZ);//posicion al momento de la colision
+                //console.log("x:"+ posComX +"z"+posComZ);//posicion de la comida
+                //console.log("x:"+posColX+"z:"+posColZ);//posicion al momento de la colision
                 if(((posColZ <= posComZ+.02)&&(posColZ >= posComZ-.02)) && ((posColX <= posComX+.02)&&(posColX >= posComX-.02)))//colision
                 {
                     var colx=posColX;
@@ -208,7 +208,8 @@
                         for(var i=0; i<elementos; i++)
                         { 
                             var validarx = document.getElementById(i.toString()).getAttribute("position").x;
-                            var validarz = document.getElementById(i.toString()).getAttribute("position").z;      
+                            var validarz = document.getElementById(i.toString()).getAttribute("position").z;    
+                            console.log("poscomx:"+posComX+"  valx:"+validarx+"  poscomz:"+posComZ+" valz:"+validarz);  
                             if(((validarz <= posComZ+.02)&&(validarz >= posComZ-.02)) && ((validarx <= posComX+.02)&&(validarx >= posComX-.02)))
                             {
                                 validacion=0;
@@ -228,7 +229,7 @@
                     comida2.setAttribute("scale",{x:.05, y:.05, z:.05});
                     comida2.setAttribute("material",{color:"#01DF01"});
                     comida2.setAttribute("id","comida1Id");
-                    console.log("Comida atrapada!");
+                    //console.log("Comida atrapada!");
 
                     //var posnuevox = document.getElementById((elementos-1).toString()).getAttribute("position").x;
                     //var posnuevoz = document.getElementById((elementos-1).toString()).getAttribute("position").z;
