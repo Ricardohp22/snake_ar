@@ -71,6 +71,11 @@
     </body>
 
     <script>
+        var escenaComida = document.getElementById("escenaComidaId");
+        var comida1 = document.getElementById("comida1Id"); 
+        var poscomida=0;
+        var posComX=0;
+        var posComZ=0;
 
         //deteccion de direccion de deslizamiento---------------------------------------------------------------
         var xIni;
@@ -175,11 +180,7 @@
             }
 
         },500);
-        var escenaComida = document.getElementById("escenaComidaId");
-        var comida1 = document.getElementById("comida1Id"); 
-        var poscomida=0;
-        var posComX=0;
-        var posComZ=0;
+        
         window.setTimeout(function(e)
         {
             posComX = aleat(1,-1);
