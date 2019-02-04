@@ -41,6 +41,11 @@
                     material="color: #04B404;"></a-box>
                     <a-box id="4" position=".2 0 0" scale=".05 .05 .05"
                     material="color: #01DF01;"></a-box>
+
+                    <a-entity id="EscenaComidaId">
+                        <a-box id="comida1Id" scale=".05 .05 .05" position="5 5 5"
+                        material="color: #01DF01"></a-box>
+                    </a-entity>
                 </a-entity>
             </a-marker>
 
@@ -157,6 +162,12 @@
             console.log(aleat(2,-2));
 
         },500);
+        var escenaComida = document.getElementById("escenaComidaId");
+        var comida1 = document.getElementById("comida1Id"); 
+        window.setTimeout(function(e)
+        {
+            comida1.setAttribute("position",{x:aleat(1,-1), y:0, z:aleat(.5,-.5)});
+        });
 //funcion para generar un numero aleatorio
     function aleat(max, min) 
     {
