@@ -120,7 +120,7 @@
         //movimiento---------------------------------------------------------------
         
         var elementos=5;
-        window.setInterval(function(e)
+        var timer1 = setInterval(function(e)
         {
             for(var i=elementos-2; i>=0; i--)
             {
@@ -155,18 +155,31 @@
             var posColZ=document.getElementById("0").getAttribute("position").z;
 
             //-------------Colision--------------
+            var perdiste=0
             if(posColZ >= .5)
             {
                 alert("Perdiste");
+                perdiste=1;
             }else if(posColZ <= -.5)
             {
                 alert("Perdiste");
+                perdiste=1;
             }else if(posColX >= 1)
             {
                 alert("Perdiste");
+                perdiste=1;
             }else if(posColX <= -1)
             {
                 alert("Perdiste");
+                perdiste=1;
+            }
+            if(perdiste==1)
+            {
+                clearInterval(timer1);
+                for(var i=0; i<elementos; i++)
+                {
+                    document.getElementById("escenaId").removeChild(elementos.toString());
+                }
             }
 
             console.log("x:"+ posComX +"z"+posComZ);//posicion de la comida
