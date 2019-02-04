@@ -199,8 +199,25 @@
                     var colx=posColX;
                     var colz=posColZ;
                     //elementos++;
-                    posComX = aleat(.9,-.9);
-                    posComZ = aleat(.4,-.4);
+                    
+                    var validacion=0;
+                    while(validacion=0)
+                    {
+                        posComX = aleat(.9,-.9);
+                        posComZ = aleat(.4,-.4);
+                        for(var i=0; i<elementos; i++)
+                        { 
+                            var validarx = document.getElementById(i.toString()).getAttribute("position").x;
+                            var validarz = document.getElementById(i.toString()).getAttribute("position").z;      
+                            if(((validarz <= posComZ+.02)&&(validarz >= posComZ-.02)) && ((validarx <= posComX+.02)&&(validarx >= posComX-.02)))
+                            {
+                                validacion=0;
+                            }else{
+                                validacion=1;
+                            }
+                        }
+                    }
+                    
 
                     var comida2 = document.createElement("a-box");
                     escenaComida.appendChild(comida2);
