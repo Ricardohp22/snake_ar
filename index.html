@@ -150,24 +150,28 @@
                     document.getElementById("0").setAttribute("position",{x:posxh, y:0, z: (poszh-.05)});
                 }break;
             }
+            //Posicion al momento de la colision
+            var posColX=document.getElementById("0").getAttribute("position").x;
+            var posColZ=document.getElementById("0").getAttribute("position").z;
+
             //-------------Colision--------------
-            if(document.getElementById("0").getAttribute("position").z >= .5)
+            if(posColZ >= .5)
             {
                 alert("Perdiste");
-            }else if(document.getElementById("0").getAttribute("position").z <= -.5)
+            }else if(posColZ <= -.5)
             {
                 alert("Perdiste");
-            }else if(document.getElementById("0").getAttribute("position").x >= 1)
+            }else if(posColX >= 1)
             {
                 alert("Perdiste");
-            }else if(document.getElementById("0").getAttribute("position").x <= -1)
+            }else if(posColX <= -1)
             {
                 alert("Perdiste");
             }
 
-            console.log("x:"+ posComX +"z"+posComZ);
-            console.log("x:"+document.getElementById("0").getAttribute("position").x+"z:"+document.getElementById("0").getAttribute("position").z);
-            if(((document.getElementById("0").getAttribute("position").z <= posComZ+.02)&&(document.getElementById("0").getAttribute("position").z >= posComZ-.02)) && ((document.getElementById("0").getAttribute("position").x <= posComX+.02)&&(document.getElementById("0").getAttribute("position").x >= posComX-.02)))
+            console.log("x:"+ posComX +"z"+posComZ);//posicion de la comida
+            console.log("x:"+posColX+"z:"+posColZ);//posicion al momento de la colision
+            if(((posColZ <= posComZ+.02)&&(posColZ >= posComZ-.02)) && ((posColX <= posComX+.02)&&(posColZ >= posComX-.02)))
             {
                 //elementos++;
                 posComX = aleat(1,-1);
@@ -182,6 +186,21 @@
                 comida2.setAttribute("material",{color:"#01DF01"});
                 comida2.setAttribute("id","comida1Id");
                 console.log("Comida atrapada!");
+
+                //var posnuevox = document.getElementById((elementos-1).toString()).getAttribute("position").x;
+                //var posnuevoz = document.getElementById((elementos-1).toString()).getAttribute("position").z;
+                elementos++;
+                
+                var eslabon = document.createElement("a-box");
+                document.getElementById("escenaId").appendChild("eslabon");
+                eslabon.setAttribute("scale",{x:.05, y:.05, z:.05});
+                eslabon.setAttribute("position",{x:posColX, y:0, z:posColZ});
+                eslabon.setAttribute("id",elementos.toString());
+                window.setTimeout(function(e)
+                {
+                    eslabon.setAttribute("position",{x:posColX, y:0, z:posColZ});
+                },(elementos-1)*500);
+
             }
 
         },500);
