@@ -178,7 +178,7 @@
                 
                 for(var i=0; i<elementos; i++)
                 {
-                    document.getElementById("escenaId").parentNode.removeChild(elementos.toString());
+                    document.getElementById("escenaId").removeChild(document.getElementById(elementos.toString()));
                     alert("funciona");
                 }
                 clearInterval(timer1);
