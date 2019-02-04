@@ -171,11 +171,13 @@
 
             console.log("x:"+ posComX +"z"+posComZ);//posicion de la comida
             console.log("x:"+posColX+"z:"+posColZ);//posicion al momento de la colision
-            if(((posColZ <= posComZ+.02)&&(posColZ >= posComZ-.02)) && ((posColX <= posComX+.02)&&(posColZ >= posComX-.02)))
+            if(((posColZ <= posComZ+.02)&&(posColZ >= posComZ-.02)) && ((posColX <= posComX+.02)&&(posColZ >= posComX-.02)))//colision
             {
+                var colx=posColX;
+                var colz=posColZ;
                 //elementos++;
-                posComX = aleat(1,-1);
-                posComZ = aleat(.5,-.5);
+                posComX = aleat(.9,-.9);
+                posComZ = aleat(.4,-.4);
 
                 var comida2 = document.createElement("a-box");
                 escenaComida.appendChild(comida2);
@@ -195,10 +197,10 @@
                 document.getElementById("escenaId").appendChild("eslabon");
                 eslabon.setAttribute("scale",{x:.05, y:.05, z:.05});
                 eslabon.setAttribute("position",{x:posColX, y:0, z:posColZ});
-                eslabon.setAttribute("id",elementos.toString());
+                eslabon.setAttribute("id",(elementos-1).toString());
                 window.setTimeout(function(e)
                 {
-                    eslabon.setAttribute("position",{x:posColX, y:0, z:posColZ});
+                    eslabon.setAttribute("position",{x:colx, y:0, z:colz});
                 },(elementos-1)*500);
 
             }
@@ -207,8 +209,8 @@
         
         window.setTimeout(function(e)
         {
-            posComX = aleat(1,-1);
-            posComZ = aleat(.5,-.5);
+            posComX = aleat(.9,-.9);
+            posComZ = aleat(.4,-.4);
             document.getElementById("comida1Id").setAttribute("position",{x: posComX, y:0, z: posComZ});
         },200);
 //funcion para generar un numero aleatorio
